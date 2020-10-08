@@ -22,7 +22,7 @@ In order to start building the two classes the first thing that I did was to che
 ---
 ## **Coding Blocks**
 
-## 1. **`DateTimeNow.java`**
+## 1. `DateTimeNow.java`
 
 ![DatetimeOne](DateTimeOne.svg)
 
