@@ -96,7 +96,7 @@ Observed from the Driver, the contructor is intialized with two given values of 
 		hdStationsCityOne = findHammingDistance(word1, stations);
 		hdStationsCityTwo = findHammingDistance(word2, stations);
 		
-		hdCityOneRepetition = findRepetitionsWithinArray(hdCityOne,         hdStationsCityOne);
+		hdCityOneRepetition = findRepetitionsWithinArray(hdCityOne, hdStationsCityOne);
 		hdCityTwoRepetition = findRepetitionsWithinArray(hdCityTwo, hdStationsCityTwo);
 	}
 ```
