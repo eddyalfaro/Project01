@@ -53,13 +53,13 @@ public class HammingDist{
 		BufferedReader reader = null;
 		
 		try {
-			reader = new BufferedReader(new FileReader(fileName));
+			reader = new BufferedReader(new FileReader(fileName));//opens file
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
-		Stream<String> lineStream = reader.lines();
-		String[] linesReadInFile = lineStream.toArray(String[]::new);
+		Stream<String> lineStream = reader.lines(); //pushes the lines of the files into a stream of strings
+		String[] linesReadInFile = lineStream.toArray(String[]::new); //turns the stream of strings into an array
 		
 		try {
 			reader.close();
@@ -81,15 +81,15 @@ public class HammingDist{
 	}
 	
 	private static String[] getStations() {
-		String[] linesReadInFile = readFile("Mesonet.txt");
+		String[] linesReadInFile = readFile("Mesonet.txt");//calls to read file and obtain he lines in the file
 		
 		for(int i = 0; i < linesReadInFile.length; i++) {
-			linesReadInFile[i] = linesReadInFile[i].trim();
-			linesReadInFile[i] = linesReadInFile[i].split(" ",2)[0];
-			linesReadInFile[i] = linesReadInFile[i].trim();
+			linesReadInFile[i] = linesReadInFile[i].trim();//takes leading and ending blank spaces from each line
+			linesReadInFile[i] = linesReadInFile[i].split(" ",2)[0];//splits into two the line using as a delimiter a blank space and assigns the first value of the line before a space
+			linesReadInFile[i] = linesReadInFile[i].trim();//trims down the obtained value from the line
 		}
 		
-		return Arrays.copyOfRange(linesReadInFile, 5, linesReadInFile.length);
+		return Arrays.copyOfRange(linesReadInFile, 5, linesReadInFile.length);//returns a copy of the array trimming it to the start of the STIDs
 	}
 	
 	public String getCityOne() {
@@ -126,19 +126,20 @@ public class HammingDist{
 
 	public static int findHammingDistance(String word, String compareTo) {
 		
+		//spliting both String into a character array
 		char[] compare = compareTo.toCharArray();
 		char[] base = word.toCharArray();
 		int hammingNumber = 0;
 		
-		if (compare.length != base.length) {
-			return -1;
+		if (compare.length != base.length) {//compares the length of the strings and returns -1 if 
+			return -1;						//they have different sizes
 		}
 		
 		//System.out.println("calculating hamming distance between " + word 
 			//	+ " and " + compareTo);
 		
-		for (int i = 0; i < compare.length; i++) {			
-			if (compare[i] != base[i]) {
+		for (int i = 0; i < compare.length; i++) { //counts the differences of the character arrays			
+			if (compare[i] != base[i]) {		   //the hamming number is incremented every time a difference is found	
 				hammingNumber++;
 			}
 		}
@@ -152,7 +153,8 @@ public class HammingDist{
 		
 		int[] arrayOfHammingNumbers = new int[array.length];
 		
-		for (int index = 0; index < array.length; index++) {
+		for (int index = 0; index < array.length; index++) {//uses the previous method to find hamming distance between a given
+															//word and words within the array
 			
 			arrayOfHammingNumbers[index] = findHammingDistance(word, array[index]);
 			
@@ -165,7 +167,7 @@ public class HammingDist{
 		
 		int repetition = 0;
 		
-		for (int index = 0; index < array.length; index++) {
+		for (int index = 0; index < array.length; index++) {//loop to find number of times key is wihtin array
 			
 			if (key == array[index]) {
 				repetition++;
