@@ -22,7 +22,7 @@ In order to start building the two classes the first thing that I did was to che
 ---
 ## **Coding Blocks**
 
-## 1. `DateTimeNow.java`
+### 1. `DateTimeNow`
 
 ![DatetimeOne](DateTimeOne.svg)
 
@@ -34,3 +34,29 @@ Wihtin the _`sleepForThreeSec()`_ method the following code is used to sleep the
 ```java
 TimeUnit.MILLISECONDS.sleep(3000);
 ```
+### 2. `HammingDistance`
+
+![HD](HammingDistance.svg)
+
+When selecting the variables for this class I focussed on what was the  required output. Thus, there is a variable asociated to each input variable. Aditionally there are two static variables. One is the array of stations ID extracted from the file while the other is the reference station to which the input is compared to, to measure the hamming distance. the required output of the class when the method _`toString()`_ is called is as follows:
+```java
+The Hamming distance between Norman and NEWK is 3; between Norman and WEBR is 4. 
+For NEWK: Number of stations with Hamming Distance 3: 20. 
+For WEBR: Number of stations with Hamming Distance 4: 90.
+```
+the description of the value of each variable is presented in the following table:
+
+---
+| Instance Variable | Type | Description |
+|---|---|---|
+| `stations`| **String[]** | contains the value of the STID for each station contained within the file. this variable is assigned the return of the method  `getStations()`|
+| `DEFAULT_STATION` | **String** | Value of this variable is **NRMN**. This is the variable that determines the first two hamming distances in the output.
+| `cityOne` | **String** | The value of the first input in the constructor is assingned to this variable. This variable is present within the output String when `toString()` is called |
+| `cityTwo` | **String** | The value of the second input in the constructor is assingned to this variable. This variable is present within the output String when `toString()` is called |
+| `hdCityOne` | **int** | this variable is initialized within the constructor, and the value assigned to it, is the found hamming distance between `DEFAULT_STATION` and `cityOne`. This variable is present within the output String when `toString()` is called | 
+| `hdCityTwo` | **int** | this variable is initialized within the constructor, and the value assigned to it, is the found hamming distance between `DEFAULT_STATION` and `cityTwo`. This variable is present within the output String when `toString()` is called |
+| `hdStationsCityOne` | **int[]** | this variable is initialized within the constructor, and the value assigned to it, is and array with hamming distances found between each on of the stations wihtin `stations` and `cityOne`. |
+| `hdStationsCityTwo` | **int[]** | this variable is initialized within the constructor, and the value assigned to it, is and array with hamming distances found between each on of the stations wihtin `stations` and `cityTwo`. |
+| `hdCityOneRepetition` | **int** | this variable is initialized within the constructor. Its value is the number of times that the `hdCityOne` is present within the array `hdStationsCityOne`. The value of this variable is one of the outputs when `toString()` is called.|
+| `hdCityTwoRepetition` | **int** | this variable is initialized within the constructor. Its value is the number of times that the `hdCityTwo` is present within the array `hdStationsCityTwo`. The value of this variable is one of the outputs when `toString()` is called.|
+---
