@@ -18,6 +18,7 @@ public class HammingDist{
 	private String cityOne;
 	private String cityTwo;
 	
+	private static final int STARTING_LINE = 5;
 	private int hdCityOne;
 	private int hdCityTwo;
 	private int[] hdStationsCityOne;
@@ -89,7 +90,7 @@ public class HammingDist{
 			linesReadInFile[i] = linesReadInFile[i].trim();//trims down the obtained value from the line
 		}
 		
-		return Arrays.copyOfRange(linesReadInFile, 5, linesReadInFile.length);//returns a copy of the array trimming it to the start of the STIDs
+		return Arrays.copyOfRange(linesReadInFile, STARTING_LINE, linesReadInFile.length);//returns a copy of the array trimming it to the start of the STIDs
 	}
 	
 	public String getCityOne() {
