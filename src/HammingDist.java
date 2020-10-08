@@ -92,35 +92,35 @@ public class HammingDist{
 		return Arrays.copyOfRange(linesReadInFile, 5, linesReadInFile.length);
 	}
 	
-	public String getWord1() {
+	public String getCityOne() {
 		return cityOne;
 	}
 
-	public String getWord2() {
+	public String getCityTwo() {
 		return cityTwo;
 	}
 
-	public int getHammingDistWith1() {
+	public int getHdCityOne() {
 		return hdCityOne;
 	}
 
-	public int getHammingDistWith2() {
+	public int getHdCityTwo() {
 		return hdCityTwo;
 	}
 
-	public int[] getHammingNumberWith1() {
+	public int[] getHdStationsCityOne() {
 		return hdStationsCityOne;
 	}
 
-	public int[] getHammingNumberWith2() {
+	public int[] getHdStationsCityTwo() {
 		return hdStationsCityTwo;
 	}
 
-	public int getNumOfStationsFromOne() {
+	public int getHdCityOneRepetition() {
 		return hdCityOneRepetition;
 	}
 
-	public int getNumOfStationsFromTwo() {
+	public int getHdCityTwoRepetition() {
 		return hdCityTwoRepetition;
 	}
 
